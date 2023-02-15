@@ -1,0 +1,32 @@
+
+
+.tttbtn{
+  background-color: #e7e7e7;
+  width: 200px;
+  height: 200px;
+  border: none;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  vertical-align: baseline;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 120px;
+  margin: 6px 6px 8px 7px;
+  cursor: pointer;
+}
+.tttbtn:hover{
+  background-color: lightgray;
+}
+
+.w3-display-container {
+    margin: auto;
+	background-color: gray;
+    height:660px;
+    width:660px;
+    padding: 10px 10px 10px 10px;
+}
+
+#banner{
+    font-size: large;
+}
