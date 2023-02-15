@@ -11,9 +11,9 @@ function loadBoard() {
     banner.innerText = "It is Player 1's turn";
 
     let board = document.getElementById("board");
-    let table = document.createElement('div');
-    table.id = "table";
-    table.setAttribute("class", "w3-display-container w3-center w3-animate-zoom w3-gray");
+    let grid = document.createElement('div');
+    grid.id = "grid";
+    grid.setAttribute("class", "w3-display-container w3-center w3-animate-zoom w3-gray");
 
     // create a 3x3 grid of buttons
     let ii;
@@ -61,9 +61,9 @@ function loadBoard() {
             row.appendChild(btn);
         }
 
-        table.appendChild(row);
+        grid.appendChild(row);
     }
-    board.appendChild(table);
+    board.appendChild(grid);
 }
 
 function checkWinCondition() {
@@ -124,6 +124,8 @@ function checkWinCondition() {
         }
     }
 
+    // A stalemate is also known as a 'cat' in tic-tac-toe.
+    // Highlight squares to make a 'C' on the board.
     if ((allTaken) && (winner == null)) {
         winner = 0;
         document.getElementById("button0").style.background = endgameColor ;
@@ -151,7 +153,7 @@ function disableAllButtons() {
 function addRestartButton() {
     let restart = document.getElementById("restart");
     let btn = document.createElement( "button");
-    let txt = document.createTextNode("Restart");
+    let txt = document.createTextNode("Play Again");
     btn.type = "button";
     btn.id = "playAgain";
     btn.setAttribute("class", "w3-button w3-black")
@@ -161,7 +163,7 @@ function addRestartButton() {
 }
 
 function reloadBoard() {
-    let div = document.getElementById("table");
+    let div = document.getElementById("grid");
     div.parentNode.removeChild(div);
 
     div = document.getElementById("playAgain");
