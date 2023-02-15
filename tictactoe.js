@@ -11,12 +11,12 @@ const drawColor = 'purple';
 
 // an array storing the win conditions
 const wins = [
-    // vertical wins
+    //horizontal wins
     [0,1,2],
     [3,4,5],
     [6,7,8],
 
-    //horizontal wins
+    //vertical wins
     [0,3,6],
     [1,4,7],
     [2,5,8],
@@ -97,8 +97,10 @@ function loadBoard() {
 
 function checkWinCondition() {
 
-    // create an array representing the currently selected buttons on the board with true (Player 2),
-    // false (Player 1), or null (unselected button)
+    // create a tri-state boolean array representing the currently selected buttons on the board
+    //     true  = Player 2
+    //     false = Player 1
+    //     null  = unselected button
     let ii, jj;
     let allTaken = true;
     let boardArray = Array(9);
@@ -122,7 +124,7 @@ function checkWinCondition() {
     let winner = null;
 
     // loop over the win conditions
-    // if there are three matching squares in a row and they are not null, highlight the winning combo
+    // if there are three matching squares in a row which are not null, highlight the winning combo
     // save the winner in a return variable
     for (jj=0; jj < wins.length; jj++) {
         if ((boardArray[ wins[jj][0] ] != null) &&
