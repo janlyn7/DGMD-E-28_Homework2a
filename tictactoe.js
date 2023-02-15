@@ -181,6 +181,7 @@ function addRestartButton() {
     let btn = document.createElement( "button");
     btn.type = "button";
     btn.id = "playAgain";
+    btn.style.fontSize = "20px";
     btn.innerText = "Play Again";
     btn.setAttribute("class", "w3-button w3-black")
     btn.addEventListener ('click', reloadBoard);
